@@ -1,0 +1,77 @@
+@import "~@fortawesome/fontawesome-free/scss/variables";
+@import "~@fortawesome/fontawesome-free/scss/fixed-width";
+$navigation--font-weight: 400 !default;
+$navigation--padding-left:6px !default;
+$navigation--border-right: 3px !default;
+$navigation--border-right-transition-time: 200ms !default;
+$navigation--border-horz-padding: 4px !default;
+$navigation--gap-height: 15px !default;
+$navigation--item--min-height: 22px !default;
+$navigation--item--font-size: 13px !default;
+$navigation--item--headline--font-size: 11px !default;
+.navigation {
+    width: 100%;
+    font-weight: $navigation--font-weight;
+    word-break: break-word;
+    .item--headline {
+        line-height: initial;
+        padding: $navigation--gap-height $navigation--padding-left 2px 6px;
+        color: #999;
+        text-transform: uppercase;
+        font-size: $navigation--item--headline--font-size;
+    }
+    .item--gap {
+        height: $navigation--gap-height;
+    }
+    .item {
+        min-height: $navigation--item--min-height;
+        line-height: $navigation--item--min-height;
+        display: flex;
+        font-size: $navigation--item--font-size;
+        padding-left: $navigation--padding-left;
+        color: #616971;
+        &:hover {
+            background-color: #E8E8E8;
+        }
+        &.activatable {
+            &:hover {
+                cursor: pointer;
+            }
+            &::after {
+                content: "";
+                display: inline-block;
+                box-sizing: content-box;
+                flex-shrink: 0;
+                border-right: $navigation--border-right solid transparent;
+            }
+            &:hover::after,
+            &.active::after {
+                transition: all $navigation--border-right-transition-time ease-in;
+                border-right: $navigation--border-right solid #d19b3d;
+            }
+        }
+        @mixin member {
+            $padding: ($navigation--item--min-height - $navigation--item--font-size) / 2;
+            padding-top: $padding;
+            padding-bottom: $padding;
+        }
+        &>div {
+            @include member;
+            display: inline-block;
+            flex-grow: 1;
+        }
+        &>.text {
+            padding-left: $navigation--border-horz-padding;
+            padding-right: $navigation--border-horz-padding;
+        }
+        &>.empty {
+            @include member;
+            @extend .#{$fa-css-prefix}-fw;
+            display: inline-block;
+            line-height: $navigation--item--min-height;
+            white-space: nowrap;
+            flex-grow: 0;
+            flex-shrink: 0;
+        }
+    }
+}

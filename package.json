@@ -1,0 +1,32 @@
+{
+  "name": "@cisisi/scss-vertical-navigation",
+  "version": "0.0.0",
+  "description": "A vertical navigation written in sass.",
+  "main": "src/index.scss",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/teroneko/cisisi-scss-vertical-navigation.git"
+  },
+  "keywords": [
+    "cisisi",
+    "sass",
+    "scss",
+    "vertical",
+    "navigation"
+  ],
+  "author": "teroneko",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/teroneko/cisisi-scss-vertical-navigation/issues"
+  },
+  "homepage": "https://github.com/teroneko/cisisi-scss-vertical-navigation#readme",
+  "devDependencies": {
+    "@fortawesome/fontawesome-free": "^5.7.1"
+  },
+  "peerDependencies": {
+    "@fortawesome/fontawesome-free": "^5.7.1"
+  }
+}

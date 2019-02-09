@@ -1,6 +1,6 @@
 {
   "name": "@cisisi/scss-vertical-navigation",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "A vertical navigation written in sass.",
   "main": "src/index.scss",
   "scripts": {

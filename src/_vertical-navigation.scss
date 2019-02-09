@@ -1,13 +1,22 @@
 @import "~@fortawesome/fontawesome-free/scss/variables";
 @import "~@fortawesome/fontawesome-free/scss/fixed-width";
+// self
 $navigation--font-weight: 400 !default;
 $navigation--padding-left:6px !default;
 $navigation--border-right: 3px !default;
 $navigation--border-right-transition-time: 200ms !default;
-$navigation--border-horz-padding: 4px !default;
-$navigation--gap-height: 15px !default;
+$navigation--border-horizontal-padding: 4px !default;
+// --item
+$navigation--item--color: #616971 !default;
 $navigation--item--min-height: 22px !default;
 $navigation--item--font-size: 13px !default;
+$navigation--item--hover-background-color: #E8E8E8 !default;
+$navigation--item--active-border-right-color: #d19b3d !default;
+// --item--gap
+$navigation--item--gap--height: 15px !default;
+// --item--headline
+$navigation--item--headline--padding-top: $navigation--item--gap--height !default;
+$navigation--item--headline--color: #999 !default;
 $navigation--item--headline--font-size: 11px !default;
 .navigation {
     width: 100%;
@@ -15,13 +24,13 @@ $navigation--item--headline--font-size: 11px !default;
     word-break: break-word;
     .item--headline {
         line-height: initial;
-        padding: $navigation--gap-height $navigation--padding-left 2px 6px;
-        color: #999;
+        padding: $navigation--item--gap--height $navigation--padding-left 2px 6px;
+        color: $navigation--item--headline--color;
         text-transform: uppercase;
         font-size: $navigation--item--headline--font-size;
     }
     .item--gap {
-        height: $navigation--gap-height;
+        height: $navigation--item--gap--height;
     }
     .item {
         min-height: $navigation--item--min-height;
@@ -29,9 +38,9 @@ $navigation--item--headline--font-size: 11px !default;
         display: flex;
         font-size: $navigation--item--font-size;
         padding-left: $navigation--padding-left;
-        color: #616971;
+        color: $navigation--item--color;
         &:hover {
-            background-color: #E8E8E8;
+            background-color: $navigation--item--hover-background-color;
         }
         &.activatable {
             &:hover {
@@ -47,7 +56,7 @@ $navigation--item--headline--font-size: 11px !default;
             &:hover::after,
             &.active::after {
                 transition: all $navigation--border-right-transition-time ease-in;
-                border-right: $navigation--border-right solid #d19b3d;
+                border-right: $navigation--border-right solid $navigation--item--active-border-right-color;
             }
         }
         @mixin member {
@@ -61,8 +70,8 @@ $navigation--item--headline--font-size: 11px !default;
             flex-grow: 1;
         }
         &>.text {
-            padding-left: $navigation--border-horz-padding;
-            padding-right: $navigation--border-horz-padding;
+            padding-left: $navigation--border-horizontal-padding;
+            padding-right: $navigation--border-horizontal-padding;
         }
         &>.empty {
             @include member;

@@ -4,7 +4,9 @@
   "description": "A vertical navigation written in sass.",
   "main": "src/index.scss",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "node-sass src/ -o dist/",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepublishOnly": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -24,7 +26,13 @@
   },
   "homepage": "https://github.com/teroneko/cisisi-scss-vertical-navigation#readme",
   "devDependencies": {
-    "@fortawesome/fontawesome-free": "^5.7.1"
+    "@fortawesome/fontawesome-free": "^5.7.1",
+    "css-loader": "^2.1.0",
+    "mini-css-extract-plugin": "^0.5.0",
+    "node-sass": "^4.11.0",
+    "sass-loader": "^7.1.0",
+    "webpack": "^4.29.3",
+    "webpack-fix-style-only-entries": "^0.2.0"
   },
   "peerDependencies": {
     "@fortawesome/fontawesome-free": "^5.7.1"
